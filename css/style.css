@@ -212,27 +212,71 @@ body.lock {
 }
 
 input::-webkit-input-placeholder {
-  color: #dbdbdb;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
+  opacity: 0.3;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 15px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 30px;
   text-align: left;
-}
-
-input:-moz-placeholder {
-  color: #dbdbdb;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  text-align: left;
+  /* Text style for "П, оиск по" */
+  font-style: normal;
+  letter-spacing: 0.15px;
+  line-height: normal;
 }
 
 input:-ms-input-placeholder {
-  color: #dbdbdb;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
+  opacity: 0.3;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 15px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 30px;
   text-align: left;
+  /* Text style for "П, оиск по" */
+  font-style: normal;
+  letter-spacing: 0.15px;
+  line-height: normal;
+}
+
+input:hover::-webkit-input-placeholder {
+  opacity: 0.6;
+}
+
+input:hover:-ms-input-placeholder {
+  opacity: 0.6;
+}
+
+input:hover::-ms-input-placeholder {
+  opacity: 0.6;
+}
+
+input:hover::placeholder {
+  opacity: 0.6;
+}
+
+input:focus {
+  border-bottom: 1px solid #000000;
+}
+
+input:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+input:focus:-ms-input-placeholder {
+  opacity: 1;
+}
+
+input:focus::-ms-input-placeholder {
+  opacity: 1;
+}
+
+input:focus::placeholder {
+  opacity: 1;
 }
 
 .header {
@@ -265,12 +309,63 @@ input:-ms-input-placeholder {
   height: 35px;
 }
 
-.header__logo-body img {
+.header__logo {
   width: 100%;
 }
 
 .header__search-body {
   margin: 53px 0 26px 0;
+  height: 30px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__search-btn {
+  background-color: #000000;
+  width: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.header__search-btn span {
+  color: #ffffff;
+}
+
+.header__search {
+  background-color: #f8e296;
+  display: inline-block;
+  padding: 0 0 0 25px;
+  height: 100%;
+  background-image: url(../img/icon/search.svg);
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-position-y: center;
+  background-size: 16px;
+  overflow: hidden;
+}
+
+.header__search-btn-body {
+  height: 100%;
+  cursor: pointer;
+}
+
+.header__search-btn-body span {
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.header__search-btn-body:active span {
+  opacity: 0.3;
 }
 
 .header__first-line-midle-row {
@@ -285,8 +380,6 @@ input:-ms-input-placeholder {
 
 .header__link-sign-in {
   /* Style for "Войти" */
-  width: 42px;
-  height: 11px;
   color: #000000;
   font-family: "Open Sans";
   font-size: 15px;
@@ -299,6 +392,23 @@ input:-ms-input-placeholder {
   font-style: normal;
   letter-spacing: 0.15px;
   line-height: normal;
+  padding: 0 0 0 18px;
+  background-image: url(../img/icon/user.svg);
+  background-position-x: left;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: 13px 12px;
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.header__link-sign-in:hover {
+  opacity: 0.6;
+}
+
+.header__link-sign-in:active {
+  opacity: 0.3;
 }
 
 .header__first-line-right-row {
@@ -330,6 +440,23 @@ input:-ms-input-placeholder {
   font-style: normal;
   letter-spacing: 0.15px;
   line-height: normal;
+  padding: 0 0 0 18px;
+  background-image: url(../img/icon/compare.svg);
+  background-position-x: left;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.header__link-compire:hover {
+  opacity: 0.6;
+}
+
+.header__link-compire:active {
+  opacity: 0.3;
 }
 
 .header__link-basket-body {
@@ -338,8 +465,6 @@ input:-ms-input-placeholder {
 
 .header__link-basket {
   /* Style for "Войти" */
-  width: 42px;
-  height: 11px;
   color: #000000;
   font-family: "Open Sans";
   font-size: 15px;
@@ -352,12 +477,112 @@ input:-ms-input-placeholder {
   font-style: normal;
   letter-spacing: 0.15px;
   line-height: normal;
+  padding: 0 0 0 18px;
+  background-image: url(../img/icon/cart.svg);
+  background-position-x: left;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  overflow: hidden;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.header__link-basket:hover {
+  opacity: 0.6;
+}
+
+.header__link-basket:active {
+  opacity: 0.3;
 }
 
 .header__last-line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+}
+
+.header__dropdown-page {
+  display: none;
+}
+
+.header__dropdown-page.dropdown-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  content: "";
+  bottom: 0;
+  width: 100%;
+  height: 80%;
+  background-color: #f8e296;
+  z-index: 5;
+}
+
+.header__dropdown-page-column {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20%;
+          flex: 1 1 20%;
+}
+
+.header__dropdown-page-column ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 100%;
+}
+
+.header__dropdown-page-column ul li {
+  margin: 4px 0 4px 0;
+}
+
+.header__dropdown-page-column ul li a {
+  font-family: "Open Sans";
+  font-size: 15px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 30px;
+  text-align: left;
+  /* Text style for "В, ойти" */
+  font-style: normal;
+  letter-spacing: 0.15px;
+  line-height: normal;
+  color: #000000;
+}
+
+.header__dropdown-page-column ul li a:hover {
+  opacity: 0.6;
+}
+
+.header__dropdown-page-column ul li a:active {
+  opacity: 0.3;
+}
+
+.header__dropdown-page-column ul li:first-child {
+  margin: 16px 0 8px 0;
+}
+
+.header__dropdown-page-column ul li:last-child {
+  margin: 8px 0 16px 0;
+}
+
+.header__dropdown-page-column ul:last-child li {
+  margin: 16px 0 8px 0;
+}
+
+.header__dropdown-page-empty-area {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40%;
+          flex: 1 1 40%;
 }
 
 .header__last-line-left-row {
@@ -383,8 +608,6 @@ input:-ms-input-placeholder {
 .header__dropdown-directory-textus {
   display: inline-block;
   /* Style for "Доставка" */
-  width: 246px;
-  height: 15px;
   color: #000000;
   font-family: "Gilroy - Extra Bold";
   font-size: 18px;
@@ -398,6 +621,24 @@ input:-ms-input-placeholder {
   font-style: normal;
   letter-spacing: 3.6px;
   line-height: normal;
+  padding: 0 20px 0 0;
+  background-image: url(../img/icon/plus.svg);
+  background-position-x: right;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.header__dropdown-directory-textus:hover {
+  opacity: 0.6;
+}
+
+.header__dropdown-directory-textus:active {
+  opacity: 0.3;
 }
 
 .header__delivery-body {
@@ -421,6 +662,17 @@ input:-ms-input-placeholder {
   font-style: normal;
   letter-spacing: 3.6px;
   line-height: normal;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.header__delivery-body span:hover {
+  opacity: 0.6;
+}
+
+.header__delivery-body span:active {
+  opacity: 0.3;
 }
 
 .header__border {
@@ -452,6 +704,17 @@ input:-ms-input-placeholder {
   font-style: normal;
   letter-spacing: 3.6px;
   line-height: normal;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.header__warranty-body span:hover {
+  opacity: 0.6;
+}
+
+.header__warranty-body span:active {
+  opacity: 0.3;
 }
 
 .header__last-line-right-row {
@@ -492,6 +755,17 @@ input:-ms-input-placeholder {
   font-style: normal;
   letter-spacing: 3.6px;
   line-height: normal;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+.header__contacts-body span:hover {
+  opacity: 0.6;
+}
+
+.header__contacts-body span:active {
+  opacity: 0.3;
 }
 
 .header__big-number-one-body {

@@ -27,28 +27,68 @@
         left: 0;
         width: 163px;
         height: 35px;
-
-        & img {
-            width: 100%;
-        }
     }
 
     // .header__logo
 
     &__logo {
+        width: 100%;
     }
 
     // .header__search-body
 
     &__search-body {
         margin: 53px 0 26px 0;
+        height: 30px;
+        width: 100%;
+        display: flex;
+        //justify-content: space-between;
     }
 
+    &__search-btn {
+        background-color: #000000;
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        & span {
+            color: #ffffff;
+        }
+    }
     // .header__search
 
     &__search {
+        background-color: #f8e296;
+        display: inline-block;
+        padding: 0 0 0 25px;
+        height: 100%;
+        //width: 120px;
+
+        background-image: url(../img/icon/search.svg);
+        background-repeat: no-repeat;
+        background-position-x: left;
+        background-position-y: center;
+        background-size: 16px;
+        overflow: hidden;
     }
 
+    &__search-btn-body {
+        height: 100%;
+        //padding: 0 0 0 20px;
+        cursor: pointer;
+
+        & span {
+            transition-duration: 0.3s;
+        }
+    }
+
+    &__search-btn-body:active {
+        & span {
+            opacity: 0.3;
+        }
+    }
     // .header__first-line-midle-row
 
     &__first-line-midle-row {
@@ -65,8 +105,6 @@
 
     &__link-sign-in {
         /* Style for "Войти" */
-        width: 42px;
-        height: 11px;
         color: #000000;
         font-family: "Open Sans";
         font-size: 15px;
@@ -79,6 +117,22 @@
         font-style: normal;
         letter-spacing: 0.15px;
         line-height: normal;
+
+        padding: 0 0 0 18px;
+
+        background-image: url(../img/icon/user.svg);
+        background-position-x: left;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        background-size: 13px 12px;
+        overflow: hidden;
+        transition-duration: 0.3s;
+    }
+    &__link-sign-in:hover {
+        opacity: 0.6;
+    }
+    &__link-sign-in:active {
+        opacity: 0.3;
     }
 
     // .header__first-line-right-row
@@ -112,6 +166,24 @@
         font-style: normal;
         letter-spacing: 0.15px;
         line-height: normal;
+
+        padding: 0 0 0 18px;
+
+        background-image: url(../img/icon/compare.svg);
+        background-position-x: left;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        background-size: 10px 10px;
+        overflow: hidden;
+        transition-duration: 0.3s;
+    }
+
+    &__link-compire:hover {
+        opacity: 0.6;
+    }
+
+    &__link-compire:active {
+        opacity: 0.3;
     }
 
     // .header__link-basket-body
@@ -124,8 +196,6 @@
 
     &__link-basket {
         /* Style for "Войти" */
-        width: 42px;
-        height: 11px;
         color: #000000;
         font-family: "Open Sans";
         font-size: 15px;
@@ -138,12 +208,106 @@
         font-style: normal;
         letter-spacing: 0.15px;
         line-height: normal;
+
+        padding: 0 0 0 18px;
+
+        background-image: url(../img/icon/cart.svg);
+        background-position-x: left;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        background-size: 12px 12px;
+        overflow: hidden;
+        transition-duration: 0.3s;
+    }
+
+    &__link-basket:hover {
+        opacity: 0.6;
+    }
+
+    &__link-basket:active {
+        opacity: 0.3;
     }
 
     // .header__last-line
 
     &__last-line {
         display: flex;
+        position: relative;
+    }
+
+    &__dropdown-page {
+        display: none;
+    }
+
+    &__dropdown-page.dropdown-page {
+        display: flex;
+        position: absolute;
+        content: "";
+        bottom: 0;
+        width: 100%;
+        height: 80%;
+        background-color: #f8e296;
+        z-index: 5;
+    }
+
+    &__dropdown-page-column {
+        flex: 1 1 20%;
+
+        & ul {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100%;
+
+            & li {
+                margin: 4px 0 4px 0;
+                & a {
+                    font-family: "Open Sans";
+                    font-size: 15px;
+                    font-weight: 300;
+                    font-style: normal;
+                    letter-spacing: normal;
+                    line-height: 30px;
+                    text-align: left;
+                    /* Text style for "В, ойти" */
+                    font-style: normal;
+                    letter-spacing: 0.15px;
+                    line-height: normal;
+                    color: #000000;
+                }
+
+                & a:hover {
+                    opacity: 0.6;
+                }
+
+                & a:active {
+                    opacity: 0.3;
+                }
+            }
+
+            & li:first-child {
+                margin: 16px 0 8px 0;
+            }
+            & li:last-child {
+                margin: 8px 0 16px 0;
+            }
+        }
+
+        & ul:last-child {
+            & li {
+                margin: 16px 0 8px 0;
+            }
+        }
+    }
+
+    &__dropdown-page-empty-area {
+        flex: 1 1 40%;
+    }
+
+    &__dropdown-page-column {
+    }
+
+    &__last-line.dropdown-page {
     }
 
     // .header__last-line-left-row
@@ -169,8 +333,6 @@
     &__dropdown-directory-textus {
         display: inline-block;
         /* Style for "Доставка" */
-        width: 246px;
-        height: 15px;
         color: #000000;
         font-family: "Gilroy - Extra Bold";
         font-size: 18px;
@@ -184,6 +346,25 @@
         font-style: normal;
         letter-spacing: 3.6px;
         line-height: normal;
+
+        padding: 0 20px 0 0;
+
+        background-image: url(../img/icon/plus.svg);
+        background-position-x: right;
+        background-position-y: center;
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        overflow: hidden;
+        cursor: pointer;
+        transition-duration: 0.3s;
+    }
+
+    &__dropdown-directory-textus:hover {
+        opacity: 0.6;
+    }
+
+    &__dropdown-directory-textus:active {
+        opacity: 0.3;
     }
 
     // .header__delivery-body
@@ -207,6 +388,16 @@
             font-style: normal;
             letter-spacing: 3.6px;
             line-height: normal;
+            cursor: pointer;
+            transition-duration: 0.3s;
+        }
+
+        & span:hover {
+            opacity: 0.6;
+        }
+
+        & span:active {
+            opacity: 0.3;
         }
     }
 
@@ -241,6 +432,16 @@
             font-style: normal;
             letter-spacing: 3.6px;
             line-height: normal;
+            cursor: pointer;
+            transition-duration: 0.3s;
+        }
+
+        & span:hover {
+            opacity: 0.6;
+        }
+
+        & span:active {
+            opacity: 0.3;
         }
     }
 
@@ -275,6 +476,16 @@
             font-style: normal;
             letter-spacing: 3.6px;
             line-height: normal;
+            cursor: pointer;
+            transition-duration: 0.3s;
+        }
+
+        & span:hover {
+            opacity: 0.6;
+        }
+
+        & span:active {
+            opacity: 0.3;
         }
     }
 

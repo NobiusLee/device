@@ -27,6 +27,8 @@
 
 //Предустоновки---------------------------------------------
 
+$disp: none;
+
 .btn {
     width: 220px;
     height: 40px;
@@ -130,26 +132,64 @@ body.lock {
 }
 
 input::-webkit-input-placeholder {
-    color: #dbdbdb;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    opacity: 0.3;
+    color: #000000;
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 30px;
     text-align: left;
+    /* Text style for "П, оиск по" */
+    font-style: normal;
+    letter-spacing: 0.15px;
+    line-height: normal;
 }
 
 input:-moz-placeholder {
-    color: #dbdbdb;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    opacity: 0.3;
+    color: #000000;
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 30px;
     text-align: left;
+    /* Text style for "П, оиск по" */
+    font-style: normal;
+    letter-spacing: 0.15px;
+    line-height: normal;
 }
+
 input:-ms-input-placeholder {
-    color: #dbdbdb;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    opacity: 0.3;
+    color: #000000;
+    font-family: "Open Sans";
+    font-size: 15px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 30px;
     text-align: left;
+    /* Text style for "П, оиск по" */
+    font-style: normal;
+    letter-spacing: 0.15px;
+    line-height: normal;
+}
+
+input:hover {
+    &::placeholder {
+        opacity: 0.6;
+    }
+}
+
+input:focus {
+    border-bottom: 1px solid #000000;
+    &::placeholder {
+        opacity: 1;
+    }
 }
 
 //Импорт блоков<
