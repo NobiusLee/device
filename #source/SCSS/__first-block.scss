@@ -112,11 +112,14 @@
 
     // .first-block__button-body
     &__button-body {
-        content: "";
-        z-index: -1;
+        cursor: pointer;
         @media (max-width: 925px) {
             width: 150px;
         }
+    }
+
+    &__button-body.active {
+        z-index: -1;
     }
 
     // .first-block__chackbox-body

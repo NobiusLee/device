@@ -2,7 +2,7 @@
 
 $(document).ready(function () {
     $('.header__menu-burger').click(function (event) {
-        $('.header__menu-burger, .header__menu, .header').toggleClass('active');
+        $('.header__menu-burger, .header__menu, .header, .first-block__button-body').toggleClass('active');
         $('body').toggleClass('lock');
     });
 });
