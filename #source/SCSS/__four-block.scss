@@ -1,0 +1,38 @@
+.four-block {
+    @media (max-width: 777px) {
+        display: none;
+    }
+    // .four-block__list
+    padding: 92px 0;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    // .four-block__item-body
+
+    &__item-body {
+        height: 100px;
+        opacity: 0.3;
+        cursor: pointer;
+        transition-duration: 0.3s;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        & img {
+            height: 100%;
+        }
+
+        @media (max-width: 1170px) {
+            height: 70px;
+        }
+
+        @media (max-width: 925px) {
+            height: 50px;
+        }
+    }
+}
