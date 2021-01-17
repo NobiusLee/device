@@ -102,7 +102,7 @@ body.lock {
     overflow: hidden;
 }
 
-.container {
+._container {
     max-width: 1165px;
     margin: 0 auto;
     padding: 0 60px;
@@ -193,6 +193,8 @@ input:focus {
 //Импорт блоков<
 @import "__header";
 @import "__first-block";
+@import "__second-block";
+@import "__three-block";
 //Импорт блоков>
 
 .content {

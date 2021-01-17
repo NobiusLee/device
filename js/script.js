@@ -116,3 +116,39 @@ $(document).ready(function () {
 
 
 });
+
+$(document).ready(function () {
+
+    $('#tab-content1').addClass('_active');
+    $('#tab-inner1').addClass('_visible');
+
+    $('#tab-content1').click(function (event) {
+        $('#tab-content1').addClass('_active');
+        $('#tab-content2').removeClass('_active');
+        $('#tab-content3').removeClass('_active');
+
+        $('#tab-inner1').addClass('_visible');
+        $('#tab-inner2').removeClass('_visible');
+        $('#tab-inner3').removeClass('_visible');
+    });
+
+    $('#tab-content2').click(function (event) {
+        $('#tab-content1').removeClass('_active');
+        $('#tab-content2').addClass('_active');
+        $('#tab-content3').removeClass('_active');
+
+        $('#tab-inner1').removeClass('_visible');
+        $('#tab-inner2').addClass('_visible');
+        $('#tab-inner3').removeClass('_visible');
+    });
+
+    $('#tab-content3').click(function (event) {
+        $('#tab-content1').removeClass('_active');
+        $('#tab-content2').removeClass('_active');
+        $('#tab-content3').addClass('_active');
+
+        $('#tab-inner1').removeClass('_visible');
+        $('#tab-inner2').removeClass('_visible');
+        $('#tab-inner3').addClass('_visible');
+    });
+});
